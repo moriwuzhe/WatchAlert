@@ -5,7 +5,7 @@ type NoticeRoutes []map[string]string
 type AlertRule struct {
 	//gorm.Model
 	TenantId             string        `json:"tenantId"`
-	RuleId               string        `json:"ruleId" gorm:"ruleId"`
+	RuleId               string        `json:"ruleId" gorm:"ruleId;type:varchar(191)"`
 	RuleGroupId          string        `json:"ruleGroupId"`
 	DatasourceType       string        `json:"datasourceType"`
 	DatasourceIdList     []string      `json:"datasourceId" gorm:"datasourceId;serializer:json"`

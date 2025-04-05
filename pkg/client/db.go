@@ -3,12 +3,13 @@ package client
 import (
 	"context"
 	"fmt"
+	"watchAlert/internal/global"
+	"watchAlert/internal/models"
+
 	"github.com/zeromicro/go-zero/core/logc"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"watchAlert/internal/global"
-	"watchAlert/internal/models"
 )
 
 func InitDB() *gorm.DB {
@@ -42,6 +43,7 @@ func InitDB() *gorm.DB {
 		&models.AlertHisEvent{},
 		&models.AlertSilences{},
 		&models.Member{},
+		&models.Role{},
 		&models.UserRole{},
 		&models.UserPermissions{},
 		&models.NoticeTemplateExample{},

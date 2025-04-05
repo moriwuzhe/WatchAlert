@@ -2,14 +2,15 @@ package services
 
 import (
 	"fmt"
-	"github.com/robfig/cron/v3"
-	"github.com/zeromicro/go-zero/core/logc"
-	"gopkg.in/ldap.v2"
 	"time"
 	"watchAlert/internal/global"
 	"watchAlert/internal/models"
 	"watchAlert/pkg/ctx"
 	"watchAlert/pkg/tools"
+
+	"github.com/go-ldap/ldap/v3"
+	"github.com/robfig/cron/v3"
+	"github.com/zeromicro/go-zero/core/logc"
 )
 
 type ldapService struct {

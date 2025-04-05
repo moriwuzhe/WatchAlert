@@ -3,8 +3,6 @@ package initialization
 import (
 	"context"
 	"fmt"
-	"github.com/zeromicro/go-zero/core/logc"
-	"golang.org/x/sync/errgroup"
 	"watchAlert/alert"
 	"watchAlert/config"
 	"watchAlert/internal/cache"
@@ -14,6 +12,9 @@ import (
 	"watchAlert/internal/services"
 	"watchAlert/pkg/ai"
 	"watchAlert/pkg/ctx"
+
+	"github.com/zeromicro/go-zero/core/logc"
+	"golang.org/x/sync/errgroup"
 )
 
 func InitBasic() {
@@ -33,7 +34,13 @@ func InitBasic() {
 	// 初始化权限数据
 	InitPermissionsSQL(ctx)
 
+	// 初始化用户数据
+	InitUserSQL(ctx)
+
 	// 初始化角色数据
+	InitRoleSQL(ctx)
+
+	// 初始化用户角色数据
 	InitUserRolesSQL(ctx)
 
 	// 导入数据源 Client 到存储池
