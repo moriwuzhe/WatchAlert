@@ -1,0 +1,57 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: watchalert
+  datasource:
+    url: jdbc:mysql://localhost:3306/watchalert
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: your-email@example.com
+    password: your-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=600s
+
+notification:
+  email:
+    host: smtp.example.com
+    port: 587
+    username: your-email@example.com
+    password: your-password
+    from: alerts@example.com
+    ssl: false
+  webhook:
+    default-url: https://example.com/webhook
+    connect-timeout: 5000
+    read-timeout: 5000
+  slack:
+    token: xoxb-your-slack-token
+    default-channel: "#alerts"
+
+logging:
+  level:
+    root: INFO
+    com.watchalert: DEBUG
+    org.springframework: INFO
+
+logging:
+  level:
+    root: INFO
+    com.watchalert: DEBUG 
