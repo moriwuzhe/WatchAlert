@@ -25,4 +25,5 @@ dist-ssr
 *.sw?
 deploy/docker-compose/mysql
 deploy/docker-compose/redis
+/target
 
